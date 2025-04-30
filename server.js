@@ -18,7 +18,9 @@ app.post("/api/send-email", upload.single("file"), async (req, res) => {
     const file = req.file;
 
     const transporter = nodemailer.createTransport({
-      service: "Gmail",
+      host: 'smtp.zoho.eu',
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -27,7 +29,7 @@ app.post("/api/send-email", upload.single("file"), async (req, res) => {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "office@traduceribox.ro",
+      to: 'office@traduceribox.ro',
       subject: `Noua comanda TraduceriBox de la ${name}`,
       text: `Detalii comanda:\nNume: ${name}\nEmail: ${email}\nMesaj: ${message}`,
       attachments: file

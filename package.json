@@ -1,7 +1,7 @@
 {
-  "name": "traduceribox-backend",
+  "name": "traduceribox-zoho-backend",
   "version": "1.0.0",
-  "description": "Server de trimitere email pentru TraduceriBox",
+  "description": "Server backend TraduceriBox cu SMTP Zoho",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
